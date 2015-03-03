@@ -7,6 +7,9 @@ app.debug = True
 
 @app.route('/')
 def index():
+    # if user is logged in go to home
+    if session.get('logged_in'):
+        return redirect(url_for('home'))
     return render_template('index.html')
 
 @app.route('/login', methods=['GET', 'POST'])
