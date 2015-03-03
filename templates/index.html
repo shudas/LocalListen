@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Facebook Login JavaScript Example</title>
-<meta charset="UTF-8">
+    <title>Facebook Login JavaScript Example</title>
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
 <script>
@@ -19,13 +20,11 @@
       testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
+      $('#status').innerHTML = 'Please log into this app.';
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
+      $('#status').innerHTML = 'Please log into Facebook.';
     }
   }
 
@@ -80,10 +79,8 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+      $('#status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
     });
-    window.location.href = '/home'
   }
 </script>
 
@@ -93,8 +90,14 @@
   the FB.login() function when clicked.
 -->
 
-<fb:login-button data-size="xlarge" data-scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
+<div id="not_login_div">
+    <fb:login-button id="fblogin_btn" data-size="xlarge" data-scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+</div>
+
+<div id="login_div">
+
+</div>
 
 <div id="status">
 </div>
