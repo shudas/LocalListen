@@ -24,7 +24,7 @@ def home():
         app.logger.debug(request.data)
         print(request.data)
         flash("Got here")
-        session['access_token'] = request.data['accessToken']
+        session['access_token'] = True
     return render_template('home.html')
 
 if __name__ == '__main__':
