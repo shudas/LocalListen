@@ -17,7 +17,8 @@
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      testAPI();
+      // testAPI();
+      $.post("/home", response.authResponse);
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       $('#status').html('Please log into this app.');
