@@ -1,17 +1,22 @@
 __author__ = 'Shu'
 
-from flask import Flask, render_template, request, session, flash
+from flask import Flask, render_template, request, session, flash, redirect, url_for
 app = Flask(__name__)
-
-# Load default config and override config from an environment variable
-app.config.update(dict(
-    SECRET_KEY='development key'
-))
-app.config.from_envvar('FLASKR_SETTINGS', silent=True)
+app.secret_key = "MY SECRET KEY WHICH SHOULD BE CHANGED"
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        session['logged_in'] = True
+        flash('You were logged in')
+        session['access_token'] = request
+        return redirect(url_for('home'))
+    return render_template('login.html', error=error)
 
 @app.route('/home', methods=['POST', 'GET'])
 def home():
@@ -19,8 +24,7 @@ def home():
         app.logger.debug(request.data)
         print(request.data)
         flash("Got here")
-        # session['access_token'] = request
-        # session.modified = True
+        session['access_token'] = request
     return render_template('home.html')
 
 if __name__ == '__main__':
