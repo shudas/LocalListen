@@ -18,8 +18,8 @@ def home():
     if request.method == 'POST':
         app.logger.debug(request.data)
         print(request.data)
-        session['access_token'] = request
-        session.modified = True
+        # session['access_token'] = request
+        # session.modified = True
     return render_template('home.html')
 
 if __name__ == '__main__':
