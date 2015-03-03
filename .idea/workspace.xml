@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9efc51c9-ffec-431d-8efe-31971ddb1a30" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LocalListen.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,8 +60,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5871711" vertical-offset="0" max-vertical-offset="608">
-              <caret line="21" column="33" selection-start-line="20" selection-start-column="10" selection-end-line="21" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.55921054" vertical-offset="0" max-vertical-offset="608">
+              <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -365,8 +366,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5871711" vertical-offset="0" max-vertical-offset="608">
-          <caret line="21" column="33" selection-start-line="20" selection-start-column="10" selection-end-line="21" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.55921054" vertical-offset="0" max-vertical-offset="608">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding />
         </state>
       </provider>
