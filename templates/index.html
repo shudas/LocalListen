@@ -4,6 +4,7 @@
     <title>Facebook Login JavaScript Example</title>
     <meta charset="UTF-8">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='jquery.redirect.js') }}"></script>
 </head>
 <body>
 <script>
@@ -18,7 +19,7 @@
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       // testAPI();
-      $.post("/home", response.authResponse);
+      $.redirect("/login", response.authResponse);
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       $('#status').html('Please log into this app.');

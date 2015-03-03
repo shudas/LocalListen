@@ -3,6 +3,7 @@ __author__ = 'Shu'
 from flask import Flask, render_template, request, session, flash, redirect, url_for
 app = Flask(__name__)
 app.secret_key = "MY SECRET KEY WHICH SHOULD BE CHANGED"
+app.debug = True
 
 @app.route('/')
 def index():
@@ -10,22 +11,25 @@ def index():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    error = None
     if request.method == 'POST':
+        app.logger.debug(request.form['accessToken'])
+        session['access_token'] = request.form['accessToken']
+        session['userid'] = request.form['userID']
         session['logged_in'] = True
-        flash('You were logged in')
-        session['access_token'] = request
         return redirect(url_for('home'))
-    return render_template('login.html', error=error)
+    # if already logged in then go to home
+    elif session.get('logged_in'):
+        return redirect(url_for('home'))
+    app.logger.debug('GOT BEFORE RENDER LOGIN')
+    return render_template('login.html')
 
 @app.route('/home', methods=['POST', 'GET'])
 def home():
-    if request.method == 'POST':
-        app.logger.debug(request.data)
-        print(request.data)
-        flash("Got here")
-        session['access_token'] = True
-    return render_template('home.html')
+    if session.get('logged_in') and session.get('userid'):
+        app.logger.debug('GOT BEFORE RENDER HOME')
+        return render_template('home.html')
+    # not logged in
+    return redirect(url_for('login'))
 
 if __name__ == '__main__':
     app.run()
