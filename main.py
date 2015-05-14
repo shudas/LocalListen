@@ -1,38 +1,30 @@
 __author__ = 'Shu'
-
-from flask import Flask, render_template, request, session, flash, redirect, url_for
+"""Routing"""
+import auth
+from flask import Flask, render_template, request, session
+app = ""
 app = Flask(__name__)
 app.secret_key = "MY SECRET KEY WHICH SHOULD BE CHANGED"
 app.debug = True
 
-@app.route('/')
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    # if user is logged in go to home
-    if session.get('logged_in'):
-        return redirect(url_for('home'))
-    return render_template('index.html')
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
     if request.method == 'POST':
-        app.logger.debug(request.form['accessToken'])
-        session['access_token'] = request.form['accessToken']
-        session['userid'] = request.form['userID']
-        session['logged_in'] = True
-        return redirect(url_for('home'))
-    # if already logged in then go to home
+        try:
+            token = request.form['accessToken']
+            app.logger.debug('token from POST: ' + token)
+            if auth.valid_token(token):
+                session['access_token'] = token
+                session['logged_in'] = True
+                return render_template('index.html', logged_in='True')
+        except Exception:
+            app.logger.debug("Could not parse the POST params properly")
+            return render_template('index.html', logged_in='False')
     elif session.get('logged_in'):
-        return redirect(url_for('home'))
-    app.logger.debug('GOT BEFORE RENDER LOGIN')
-    return render_template('login.html')
-
-@app.route('/home', methods=['POST', 'GET'])
-def home():
-    if session.get('logged_in') and session.get('userid'):
-        app.logger.debug('GOT BEFORE RENDER HOME')
-        return render_template('home.html')
-    # not logged in
-    return redirect(url_for('login'))
+        return render_template('index.html', logged_in='True')
+    app.logger.debug('GOT BEFORE RENDER INDEX ELSE')
+    return render_template('index.html', logged_in='False')
 
 if __name__ == '__main__':
     app.run()
