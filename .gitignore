@@ -1,6 +1,7 @@
 # IDEA
 .idea/
-
+.idea/*
+static/images
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

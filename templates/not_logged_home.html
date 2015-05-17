@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <link href="{{ url_for('static', filename='css/not_logged_home.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/jquery.redirect.js') }}"></script>
+{% endblock head %}
+
+{% block body %}
+<script>
+// This is called with the results from from FB.getLoginStatus().
+function statusChangeCallback(response) {
+// make loading word disappear
+$('#loading').hide();
+console.log('statusChangeCallback');
+console.log(response);
+if (response.status === 'connected') {
+  // Logged into your app and Facebook.
+  //$.redirect("/", response.authResponse);
+}
+}
+
+function checkLoginState() {
+FB.getLoginStatus(function(response) {
+  statusChangeCallback(response);
+});
+}
+
+window.fbAsyncInit = function() {
+FB.init({
+appId      : '617235401742568',
+cookie     : true,  // enable cookies to allow the server to access
+                    // the session
+xfbml      : true,  // parse social plugins on this page
+version    : 'v2.2' // use version 2.2
+});
+
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
+
+};
+
+// Load the SDK asynchronously
+(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/sdk.js";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+            <div class="inner cover">
+                <h1 class="cover-heading">Listen to amazing local artists.<br/>Get your own music heard.</h1>
+                <div class="lead">
+                    <p id="loading">Loading...</p>
+                    <fb:login-button id="fblogin_btn" data-size="xlarge" data-scope="public_profile,email" onlogin="checkLoginState();"/>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock body %}
+
+</html>
