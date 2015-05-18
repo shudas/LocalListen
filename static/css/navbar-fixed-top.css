@@ -6,14 +6,21 @@ body {
 .navbar-default {
     background-color: #2d8478;
     border-color: #d34747;
+    font-family: 'Oswald', sans-serif;
 }
 
 .navbar-fixed-top {
     border-width: 0 0 3px;
 }
 
-.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
+.navbar-default .navbar-nav>li>a {
     color: #ffa3a3;
+}
+
+.navbar-default .navbar-brand {
+    color: #f57373;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .navbar-header a.navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {
@@ -23,10 +30,6 @@ body {
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
   color: #d0f19a;
   background-color: transparent;
-}
-
-.active {
-    font-weight: 900;
 }
 
 .navbar-default .navbar-toggle, icon-bar {
