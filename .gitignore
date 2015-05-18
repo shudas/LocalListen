@@ -1,5 +1,6 @@
-# MY STUFF
-static/images
+# GIMP files and windows thumbnail cache
+*.xcf
+Thumbs.db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
