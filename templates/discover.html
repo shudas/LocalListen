@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block page_title %}Local Listen - Listen{% endblock page_title %}
+{% block page_title %}Local Listen - Discover{% endblock page_title %}
 {% block page_desc %}Find your favorite styles of music, played by local artists.{% endblock page_desc %}
 {% block head %}
     {{ super() }}
@@ -19,7 +19,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/discover">Local Listen</a>
+            <a class="navbar-brand" href="/discover" title="Discover Music">
+                <span>
+                    <img class="logo" src="{{ url_for('static', filename='images/globe_headphones_icon_med.png') }}" alt="Logo">
+                    &nbsp;Local Listen
+                </span>
+            </a>
+            <!--<a class="navbar-brand" href="/discover">Local Listen</a>-->
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">

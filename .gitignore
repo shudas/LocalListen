@@ -2,6 +2,7 @@
 *.xcf
 Thumbs.db
 *_orig.jpg
+*_orig.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
