@@ -4,6 +4,7 @@
     <list default="true" id="9efc51c9-ffec-431d-8efe-31971ddb1a30" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\static\images\girl_listen_public.jpg" afterPath="$PROJECT_DIR$/static/images/girl_listen_public_orig.jpg" />
     </list>
     <ignored path="LocalListen.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,8 +83,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.05831904" vertical-offset="0" max-vertical-offset="1088">
-              <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.087478556" vertical-offset="0" max-vertical-offset="1105">
+              <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -710,7 +711,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/images/girl_listen_public.jpg">
+    <entry file="file://$PROJECT_DIR$/static/images/girl_listen_public_orig.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -801,8 +802,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05831904" vertical-offset="0" max-vertical-offset="1088">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.087478556" vertical-offset="0" max-vertical-offset="1105">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
           <folding />
         </state>
       </provider>

@@ -1,6 +1,7 @@
-# GIMP files and windows thumbnail cache
+# GIMP files, windows thumbs, original images
 *.xcf
 Thumbs.db
+*_orig.jpg
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
