@@ -24,3 +24,7 @@ body {
   color: #d0f19a;
   background-color: transparent;
 }
+
+.active {
+    font-weight: 900;
+}

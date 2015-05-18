@@ -12,7 +12,10 @@ app.debug = True
 def index():
     if session.get('logged_in'):
         return redirect(url_for('discover'))
-    return render_template('index.html', redir="/discover")
+    redir_url = "/discover"
+    if request.args.get("redir"):
+        redir_url = request.args.get("redir")
+    return render_template('index.html', redir=redir_url)
 
 def new_page_load_redir(redir_page):
     redir_html = redir_page + '.html'
