@@ -30,12 +30,12 @@ body {
   background-color: transparent;
 }
 
-.navbar-default .navbar-toggle, icon-bar {
-  border-color: #ffa3a3;
+.navbar-default .navbar-toggle {
+  border-color: #f57373;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffa3a3;
+  background-color: #f57373;
 }
 
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
