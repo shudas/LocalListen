@@ -21,7 +21,7 @@ body {
     font-size: 24px;
 }
 
-.navbar-header a.navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {
+.navbar-header a.navbar-brand:hover, .navbar-default .navbar-brand:focus, .navbar-default .navbar-nav>li>a:hover {
     color: #fff;
 }
 
@@ -43,8 +43,6 @@ body {
 }
 
 .logo {
-    width: 40px;
-    height: 40px;
     max-width:100px;
     margin-top: -10px;
 }
