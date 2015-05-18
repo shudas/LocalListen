@@ -28,3 +28,15 @@ body {
 .active {
     font-weight: 900;
 }
+
+.navbar-default .navbar-toggle, icon-bar {
+  border-color: #ffa3a3;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffa3a3;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: #489a8e;
+}
