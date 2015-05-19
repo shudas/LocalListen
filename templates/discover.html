@@ -11,11 +11,11 @@
 
 <script type="text/javascript">
     function hover() {
-        $('#logo').attr('src', '{{ url_for('static', filename='images/globe_headphones_orig_active.png') }}');
+        $('#logo').attr('src', '{{ url_for('static', filename='images/globe_headphones_active.png') }}');
     }
 
     function unhover(element) {
-        $('#logo').attr('src', '{{ url_for('static', filename='images/globe_headphones_orig.png') }}');
+        $('#logo').attr('src', '{{ url_for('static', filename='images/globe_headphones.png') }}');
     }
 </script>
 
@@ -32,7 +32,7 @@
             </button>
             <a class="navbar-brand" href="/discover" title="Discover Music">
                 <span id="logo_span" onmouseover="hover();" onmouseout="unhover();" onfocus="hover();">
-                    <img id="logo" src="{{ url_for('static', filename='images/globe_headphones_orig.png') }}" alt="Logo">
+                    <img id="logo" src="{{ url_for('static', filename='images/globe_headphones.png') }}" alt="Logo">
                     &nbsp;Local Listen
                 </span>
             </a>
