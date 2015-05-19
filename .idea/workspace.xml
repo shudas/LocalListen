@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9efc51c9-ffec-431d-8efe-31971ddb1a30" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\static\images\globe_headphones_orig_active.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/discover.html" afterPath="$PROJECT_DIR$/templates/discover.html" />
     </list>
     <ignored path="LocalListen.iws" />
@@ -40,8 +39,8 @@
       <file leaf-file-name="discover.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/discover.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5079086" vertical-offset="0" max-vertical-offset="1207">
-              <caret line="17" column="86" selection-start-line="17" selection-start-column="86" selection-end-line="17" selection-end-column="86" />
+            <state vertical-scroll-proportion="0.23901582" vertical-offset="408" max-vertical-offset="1207">
+              <caret line="32" column="141" selection-start-line="32" selection-start-column="141" selection-end-line="32" selection-end-column="141" />
               <folding />
             </state>
           </provider>
@@ -767,8 +766,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/discover.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5079086" vertical-offset="0" max-vertical-offset="1207">
-          <caret line="17" column="86" selection-start-line="17" selection-start-column="86" selection-end-line="17" selection-end-column="86" />
+        <state vertical-scroll-proportion="0.23901582" vertical-offset="408" max-vertical-offset="1207">
+          <caret line="32" column="141" selection-start-line="32" selection-start-column="141" selection-end-line="32" selection-end-column="141" />
           <folding />
         </state>
       </provider>
