@@ -9,6 +9,17 @@
 
 {% block body %}
 
+<script type="text/javascript">
+    function hover() {
+        $('#logo').attr('src', '{{ url_for('static', filename='images/globe_headphones_orig_active.png') }}');
+    }
+
+    function unhover(element) {
+        $('#logo').attr('src', '{{ url_for('static', filename='images/globe_headphones_orig.png') }}');
+    }
+</script>
+
+
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -20,8 +31,8 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/discover" title="Discover Music">
-                <span>
-                    <img class="logo" src="{{ url_for('static', filename='images/globe_headphones_icon_med.png') }}" alt="Logo">
+                <span id="logo_span" onmouseover="hover();" onmouseout="unhover();" onfocus="hover();">
+                    <img id="logo" src="{{ url_for('static', filename='images/globe_headphones_orig.png') }}" alt="Logo">
                     &nbsp;Local Listen
                 </span>
             </a>
