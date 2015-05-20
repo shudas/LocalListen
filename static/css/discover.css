@@ -45,6 +45,10 @@ body {
   border-color: #2d8478;
 }
 
+.form-control {
+    border-color: #2d8478;
+}
+
 .form-control:focus {
     border-color: #d34747;
 }
@@ -52,5 +56,5 @@ body {
 .playing-title {
     font-family: 'Oswald', sans-serif;
     margin-top: 0px;
-    color: #8f0c0c;
+    color: #d34747;
 }
