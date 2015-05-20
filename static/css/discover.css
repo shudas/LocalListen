@@ -1,0 +1,56 @@
+body {
+    min-height: 2000px;
+}
+
+.row {
+    padding-top: 16px;
+}
+
+.panel {
+    margin-top: 16px;
+}
+
+.panel-primary {
+    border-color: #d34747;
+}
+
+.panel-primary>.panel-heading {
+    font-family: 'Oswald', sans-serif;
+    background-color: #d34747;
+    border-color: #d34747;
+    color: #d0f19a;
+    padding: 15px 20px;
+}
+
+.panel-title {
+    font-size: 18px;
+}
+
+.panel-body {
+    padding: 0px;
+}
+
+.list-group {
+    margin: 0px;
+}
+
+.list-group-item:first-child {
+    border-radius: 0px;
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+  z-index: 2;
+  color: #fff;
+  background-color: #2d8478;
+  border-color: #2d8478;
+}
+
+.form-control:focus {
+    border-color: #d34747;
+}
+
+.playing-title {
+    font-family: 'Oswald', sans-serif;
+    margin-top: 0px;
+    color: #8f0c0c;
+}
