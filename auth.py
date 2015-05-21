@@ -12,7 +12,7 @@ def valid_token(token, uid):
     args = {'input_token': token, 'access_token': app_access}
     r = requests.get("https://graph.facebook.com/debug_token", params=args)
     # something weird going on if status code isnt 200. Just sayin
-    if r.status_code != 200:
+    if r.status_code != requests.codes.ok:
         return False
     data = r.json()
     main.app.logger.debug('valid token returned: ')
