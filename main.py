@@ -1,10 +1,10 @@
 __author__ = 'Shu'
 """Routing"""
-import auth
+import auth, config_parser
 from flask import Flask, render_template, request, session, redirect, url_for
+from config_parser import config as conf
+
 app = Flask(__name__)
-app.secret_key = "MY SECRET KEY WHICH SHOULD BE CHANGED"
-app.debug = True
 
 
 # redirects to /discover on success
@@ -52,4 +52,7 @@ def manage():
     return new_page_load_redir("manage")
 
 if __name__ == '__main__':
+    config_parser.read_config()
+    app.config['SECRET_KEY'] = conf['Flask']['secret_key']
+    app.config['DEBUG'] = bool(conf['Flask']['debug'])
     app.run()
