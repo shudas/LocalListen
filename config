@@ -6,8 +6,8 @@ debug: True
 app_id: 617235401742568
 app_secret: 1f3a8f0428a1b79265f10af6863a43c2
 
-[Database]
+[DB]
 user: root
-pass: mysqlpass
+password: mysqlpass
 host: localhost
-db_name: locallisten
+database: locallisten
