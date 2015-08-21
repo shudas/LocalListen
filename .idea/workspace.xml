@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9efc51c9-ffec-431d-8efe-31971ddb1a30" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/config_parser.py" afterPath="$PROJECT_DIR$/config/config_parser.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/security/auth.py" afterPath="$PROJECT_DIR$/security/auth.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helper/get_genres.py" afterPath="$PROJECT_DIR$/helper/get_genres.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="MOVED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\config\app.config" afterPath="$PROJECT_DIR$/app.config" />
+      <change type="MOVED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\config\config_parser.py" afterPath="$PROJECT_DIR$/config_parser.py" />
     </list>
     <ignored path="LocalListen.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +33,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.5689654" vertical-offset="17" max-vertical-offset="493">
-              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+            <state vertical-scroll-proportion="-5.5689654" vertical-offset="34" max-vertical-offset="510">
+              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -39,8 +43,8 @@
       <file leaf-file-name="auth.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/security/auth.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1598">
-              <caret line="60" column="65" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1615">
+              <caret line="61" column="65" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -59,8 +63,8 @@
       <file leaf-file-name="get_genres.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helper/get_genres.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.5862069" vertical-offset="102" max-vertical-offset="1343">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.5862069" vertical-offset="119" max-vertical-offset="1343">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,10 +93,10 @@
         </entry>
       </file>
       <file leaf-file-name="config_parser.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/config_parser.py">
+        <entry file="file://$PROJECT_DIR$/config_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08388158" vertical-offset="0" max-vertical-offset="663">
-              <caret line="3" column="84" selection-start-line="3" selection-start-column="84" selection-end-line="3" selection-end-column="84" />
+            <state vertical-scroll-proportion="0.8947368" vertical-offset="0" max-vertical-offset="663">
+              <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -239,34 +243,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LocalListen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LocalListen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LocalListen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LocalListen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -292,11 +268,11 @@
       <recent name="E:\Documents\Programming Projects\Website Projects\LocalListen\static\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Documents\Programming Projects\Website Projects\LocalListen" />
       <recent name="E:\Documents\Programming Projects\Website Projects\LocalListen\config" />
       <recent name="E:\Documents\Programming Projects\Website Projects\LocalListen\templates" />
       <recent name="E:\Documents\Programming Projects\Website Projects\LocalListen\static\html" />
       <recent name="E:\Documents\Programming Projects\Website Projects\LocalListen\templates\pages" />
-      <recent name="E:\Documents\Programming Projects\Website Projects\LocalListen\security" />
     </key>
   </component>
   <component name="RunManager" selected="Python.LocalListenServer">
@@ -678,7 +654,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.config">
+    <entry file="file://$PROJECT_DIR$/app.config">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
@@ -837,8 +813,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.5689654" vertical-offset="17" max-vertical-offset="493">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        <state vertical-scroll-proportion="-5.5689654" vertical-offset="34" max-vertical-offset="510">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -853,16 +829,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/helper/get_genres.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.5862069" vertical-offset="102" max-vertical-offset="1343">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/security/auth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1598">
-          <caret line="60" column="65" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="65" />
+        <state vertical-scroll-proportion="-0.5862069" vertical-offset="119" max-vertical-offset="1343">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -883,10 +851,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/config_parser.py">
+    <entry file="file://$PROJECT_DIR$/security/auth.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08388158" vertical-offset="0" max-vertical-offset="663">
-          <caret line="3" column="84" selection-start-line="3" selection-start-column="84" selection-end-line="3" selection-end-column="84" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1615">
+          <caret line="61" column="65" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8947368" vertical-offset="0" max-vertical-offset="663">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

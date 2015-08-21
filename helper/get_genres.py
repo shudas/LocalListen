@@ -5,7 +5,7 @@ import os.path
 import requests
 from bs4 import BeautifulSoup
 
-from config.config_parser import get_config
+from config_parser import get_config
 
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))

@@ -4,7 +4,8 @@ from flask_restful import Api
 
 from security.auth import LoginResource
 from webapp.basic_page import basic_page_blueprint
-from config.config_parser import get_config
+from config_parser import get_config
+
 
 
 # read the app.config before anything
