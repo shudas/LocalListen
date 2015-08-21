@@ -1,6 +1,6 @@
 import ConfigParser
 
-config_file = "config"
+config_file = "app.config"
 _config = None
 
 
@@ -13,7 +13,7 @@ def get_config():
 
 
 def read_config():
-    # config was already loaded
+    # app.config was already loaded
     ret = dict()
     conf_parser = ConfigParser.ConfigParser()
     conf_parser.read(config_file)

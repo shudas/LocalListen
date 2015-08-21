@@ -1,11 +1,12 @@
 """Authenticating users"""
 
-from flask import Blueprint, session, request, current_app as app, render_template, render_template_string
+from flask import session, request, current_app as app
 from flask_restful import Resource
-
-from helper.config_parser import get_config
-import constants
 import requests
+
+from config.config_parser import get_config
+import constants
+
 
 
 # auth_blueprint = Blueprint('auth', __name__)

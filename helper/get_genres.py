@@ -1,9 +1,12 @@
-import requests
 import re
-from config_parser import get_config
-from bs4 import BeautifulSoup
 import sys
 import os.path
+
+import requests
+from bs4 import BeautifulSoup
+
+from config.config_parser import get_config
+
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from models.db_helper import create_table, insert_values
