@@ -20,9 +20,9 @@
             console.log(success);
             if (success === true) {
                 console.log('success from auth');
-                // window.location = "{{ url_for('basic_page.show', page='discover') }}";
+                window.location = "{{ url_for('basic_page.show', page='discover') }}";
             } else {
-                // window.location.reload();
+                window.location.reload();
             }
         });
     </script>

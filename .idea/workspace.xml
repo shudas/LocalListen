@@ -2,34 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9efc51c9-ffec-431d-8efe-31971ddb1a30" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helper/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/security/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webapp/basic_page.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/security/constants.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helper/get_genres.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/spinner.css" />
-      <change type="DELETED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\data\genres" afterPath="" />
-      <change type="DELETED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\data\genres.discogs" afterPath="" />
-      <change type="DELETED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\data\style-getter.py" afterPath="" />
-      <change type="DELETED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\db_test.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/base.css" afterPath="$PROJECT_DIR$/static/css/base.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config" afterPath="$PROJECT_DIR$/config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/discover.css" afterPath="$PROJECT_DIR$/static/css/discover.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/pages/index.html" afterPath="$PROJECT_DIR$/templates/pages/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/navbar.html" afterPath="$PROJECT_DIR$/templates/navbar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/not_logged_home.css" afterPath="$PROJECT_DIR$/static/css/not_logged_home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\auth.py" afterPath="$PROJECT_DIR$/security/auth.py" />
-      <change type="MOVED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\config_parser.py" afterPath="$PROJECT_DIR$/helper/config_parser.py" />
-      <change type="MOVED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\models\sql_setup\create_db.sql" afterPath="$PROJECT_DIR$/not_used/sql_setup/create_db.sql" />
-      <change type="MOVED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\models\sql_setup\create_tables.sql" afterPath="$PROJECT_DIR$/not_used/sql_setup/create_tables.sql" />
-      <change type="MOVED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\models\sql_setup\drop_tables.sql" afterPath="$PROJECT_DIR$/not_used/sql_setup/drop_tables.sql" />
-      <change type="MOVED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\templates\discover.html" afterPath="$PROJECT_DIR$/templates/pages/discover.html" />
-      <change type="MOVED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\templates\index.html" afterPath="$PROJECT_DIR$/templates/pages/index.html" />
-      <change type="MOVED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\templates\manage.html" afterPath="$PROJECT_DIR$/templates/pages/manage.html" />
-      <change type="MOVED" beforePath="E:\Documents\Programming Projects\Website Projects\LocalListen\templates\upload.html" afterPath="$PROJECT_DIR$/templates/pages/upload.html" />
     </list>
     <ignored path="LocalListen.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,6 +27,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.27960527" vertical-offset="0" max-vertical-offset="1343">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="e#14#91#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="auth.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/security/auth.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -129,10 +115,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spinner.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="spinner.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/spinner.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19572368" vertical-offset="0" max-vertical-offset="884">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
               <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
               <folding />
             </state>
@@ -144,16 +130,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
               <caret line="18" column="29" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navbar.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/navbar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="1088">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -207,7 +183,6 @@
         <option value="$PROJECT_DIR$/templates/pages/manage.html" />
         <option value="$PROJECT_DIR$/templates/pages/upload.html" />
         <option value="$PROJECT_DIR$/security/constants.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/templates/navbar.html" />
         <option value="$PROJECT_DIR$/webapp/basic_page.py" />
         <option value="$PROJECT_DIR$/static/html/spinner.html" />
@@ -217,6 +192,7 @@
         <option value="$PROJECT_DIR$/templates/pages/index.html" />
         <option value="$PROJECT_DIR$/static/css/not_logged_home.css" />
         <option value="$PROJECT_DIR$/static/css/spinner.css" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -889,14 +865,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="701" max-vertical-offset="1309">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/pages/discover.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.8846154" vertical-offset="179" max-vertical-offset="1105">
@@ -1006,9 +974,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/spinner.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19572368" vertical-offset="0" max-vertical-offset="884">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
           <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27960527" vertical-offset="0" max-vertical-offset="1343">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#14#91#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
