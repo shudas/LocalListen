@@ -1,6 +1,7 @@
 import ConfigParser
+import os
 
-config_file = "app.config"
+config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "app.config")
 _config = None
 
 
