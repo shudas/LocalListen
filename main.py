@@ -10,6 +10,8 @@ from helper import config_parser
 config_parser.read_config()
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = config_parser.config['Flask']['secret_key']
+
 # app.register_blueprint(auth_blueprint, url_prefix='/svc/auth')
 app.register_blueprint(basic_page_blueprint)
 api = Api(app, prefix='/svc')
@@ -68,6 +70,5 @@ api.add_resource(LoginResource, '/auth/login')
 
 
 if __name__ == '__main__':
-    app.config['SECRET_KEY'] = config_parser.config['Flask']['secret_key']
     app.config['DEBUG'] = bool(config_parser.config['Flask']['debug'])
     app.run()
