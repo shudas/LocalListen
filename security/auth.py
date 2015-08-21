@@ -3,7 +3,7 @@
 from flask import Blueprint, session, request, current_app as app, render_template, render_template_string
 from flask_restful import Resource
 
-from helper.config_parser import config as conf
+from helper.config_parser import get_config
 import constants
 import requests
 
@@ -40,7 +40,7 @@ def valid_fb_token(token, uid):
     if token is None or uid is None:
         app.logger.debug("Token or user id is none")
         return False
-    app_access = '{}|{}'.format(conf['Facebook']['app_id'], conf['Facebook']['app_secret'])
+    app_access = '{}|{}'.format(get_config()['Facebook']['app_id'], get_config()['Facebook']['app_secret'])
     args = {'input_token': token, 'access_token': app_access}
     r = requests.get(constants.FB_DEBUG_ENDPOINT, params=args)
     # something weird going on if status code isnt OK. Just sayin
@@ -50,14 +50,14 @@ def valid_fb_token(token, uid):
     data = r.json().get('data', {})
     # Yay it's valid
     if data.get('is_valid') and str(data.get('user_id')) == str(uid) \
-            and str(conf['Facebook']['app_id']) == str(data.get('app_id')):
+            and str(get_config()['Facebook']['app_id']) == str(data.get('app_id')):
         app.logger.debug("Correct FB creds. YAY")
         return True
     else:
         app.logger.debug("Incorrect FB creds. BOO")
         app.logger.debug('is_valid: {}, user_id_fb: {}, user_id_given: {}, app_id_fb: {}, app_id_stored: {}'
                          .format(data.get('is_valid'), data.get('user_id'), uid,
-                                 data.get('app_id'), conf['Facebook']['app_id']))
+                                 data.get('app_id'), get_config()['Facebook']['app_id']))
     return False
 
 

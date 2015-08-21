@@ -1,14 +1,20 @@
 import ConfigParser
 
 config_file = "config"
-config = dict()
+_config = None
+
+
+def get_config():
+    global _config
+    if _config is not None:
+        return _config
+    _config = read_config()
+    return _config
 
 
 def read_config():
     # config was already loaded
-    global config
-    if len(config) != 0:
-        return
+    ret = dict()
     conf_parser = ConfigParser.ConfigParser()
     conf_parser.read(config_file)
     for section in conf_parser.sections():
@@ -22,7 +28,5 @@ def read_config():
             except:
                 print("exception on %s! Setting %s value to None" % option)
                 dict1[option] = None
-        config[section] = dict1
-
-if __name__ == '__main__':
-    read_config()
+        ret[section] = dict1
+    return ret

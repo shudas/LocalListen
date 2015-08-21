@@ -1,6 +1,6 @@
 import requests
 import re
-import config_parser
+from config_parser import get_config
 from bs4 import BeautifulSoup
 import sys
 import os.path
@@ -62,10 +62,9 @@ def get_and_store():
     genres = get_all_genres()
     # first try to create the genre table. should not create if exists
     ddl = 'genre VARCHAR(50) PRIMARY KEY'
-    create_table(config_parser.config['Tables']['genre'], ddl)
+    create_table(get_config()['Tables']['genre'], ddl)
     for genre in genres:
-        insert_values(config_parser.config['Tables']['genre'], 'genre', genre)
+        insert_values(get_config()['Tables']['genre'], 'genre', genre)
 
 if __name__ == '__main__':
-    config_parser.read_config()
     get_and_store()
