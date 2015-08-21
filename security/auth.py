@@ -4,8 +4,9 @@ from flask import session, request, current_app as app
 from flask_restful import Resource
 import requests
 
-from config_parser import get_config
+from config.config_parser import get_config
 import constants
+
 
 
 
