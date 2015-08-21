@@ -11,13 +11,13 @@ body {
 }
 
 .panel-primary {
-    border-color: #d34747;
+    border-color: #2d8478;
 }
 
 .panel-primary>.panel-heading {
     font-family: 'Oswald', sans-serif;
-    background-color: #d34747;
-    border-color: #d34747;
+    background-color: #2d8478;
+    border-color: #2d8478;
     color: #d0f19a;
     padding: 15px 20px;
 }
@@ -41,8 +41,8 @@ body {
 .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
   z-index: 2;
   color: #fff;
-  background-color: #2d8478;
-  border-color: #2d8478;
+  background-color: #d34747;
+  border-color: #d34747;
 }
 
 .form-control {

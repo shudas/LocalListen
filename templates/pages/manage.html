@@ -1,18 +1,25 @@
 {% extends "navbar.html" %}
-{% block page_title %}Local Listen - Upload{% endblock page_title %}
-{% block page_desc %}Upload your own songs so that they can be heard by others around you{% endblock page_desc %}
+{% block page_title %}Local Listen - Manage{% endblock page_title %}
+{% block page_desc %}Manage your user account{% endblock page_desc %}
 
 {% block head %}
     {{ super() }}
 {% endblock head %}
 
 {% block body %}
+<!--if not logged in, go to index-->
+{% if session is undefined or session.logged_in is undefined or session.logged_in == false %}
+    <script>
+        console.log('{{ url_for('basic_page.show') }}');
+        window.location = '{{ url_for('basic_page.show') }}';
+    </script>
+{% else %}
 {{ super() }}
 
 <div class="container">
     <!-- Main component for a primary marketing message or call to action -->
     <div class="jumbotron">
-        <h1>Upload</h1>
+        <h1>Manage</h1>
         <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
         <p>To see the difference between static and fixed top navbars, just scroll.</p>
         <p>
@@ -21,4 +28,5 @@
     </div>
 </div> <!-- /container -->
 
+{% endif %}
 {% endblock body %}

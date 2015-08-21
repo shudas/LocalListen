@@ -6,15 +6,15 @@
 
 {% block body %}
 
-<script type="text/javascript">
-    function hover() {
-        $('#logo').attr('src', '{{ url_for('static', filename='images/globe_headphones_active.png') }}');
-    }
+<!--<script type="text/javascript">-->
+    <!--function hover() {-->
+        <!--$('#logo').attr('src', '{{ url_for('static', filename='images/globe_headphones_active.png') }}');-->
+    <!--}-->
 
-    function unhover(element) {
-        $('#logo').attr('src', '{{ url_for('static', filename='images/globe_headphones.png') }}');
-    }
-</script>
+    <!--function unhover(element) {-->
+        <!--$('#logo').attr('src', '{{ url_for('static', filename='images/globe_headphones.png') }}');-->
+    <!--}-->
+<!--</script>-->
 
 <!-- Fixed navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -36,17 +36,17 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                {% if request.endpoint == "discover" %}
+                {% if request.path == "/discover" %}
                     <li class="active"><a href="/discover">Discover<span class="sr-only">(current)</span></a></li>
                     <li><a href="/upload">Upload</a></li>
                     <li><a href="/manage">Manage</a></li>
                 {% endif %}
-                {% if request.endpoint == "upload" %}
+                {% if request.path == "/upload" %}
                     <li><a href="/discover">Discover</a></li>
                     <li class="active"><a href="/upload">Upload<span class="sr-only">(current)</span></a></li>
                     <li><a href="/manage">Manage</a></li>
                 {% endif %}
-                {% if request.endpoint == "manage" %}
+                {% if request.path == "/manage" %}
                     <li><a href="/discover">Discover</a></li>
                     <li><a href="/upload">Upload</a></li>
                     <li class="active"><a href="/manage">Manage<span class="sr-only">(current)</span></a></li>

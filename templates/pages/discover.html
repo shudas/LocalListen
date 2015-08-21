@@ -10,10 +10,17 @@
 {% endblock head %}
 
 {% block body %}
+<!--if not logged in, go to index-->
+{% if session is undefined or session.logged_in is undefined or session.logged_in == false %}
+    <script>
+        console.log('{{ url_for('basic_page.show') }}');
+        window.location = '{{ url_for('basic_page.show') }}';
+    </script>
+{% else %}
+<!--navbar-->
 {{ super() }}
 
 <div class="container">
-    <!-- Main component for a primary marketing message or call to action -->
     <div class="row">
         <div class="col-sm-4">
             <form>
@@ -47,4 +54,6 @@
     </div>
 </div> <!-- /container -->
 
+{% endif %}
 {% endblock body %}
+

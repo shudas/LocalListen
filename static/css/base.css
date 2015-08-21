@@ -1,2 +1,9 @@
 /*use the base font*/
 body { font-family: 'Open Sans', sans-serif; }
+
+.page-center {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

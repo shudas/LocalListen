@@ -5,9 +5,12 @@ config = dict()
 
 
 def read_config():
+    # config was already loaded
+    global config
+    if len(config) != 0:
+        return
     conf_parser = ConfigParser.ConfigParser()
     conf_parser.read(config_file)
-    global config
     for section in conf_parser.sections():
         dict1 = dict()
         options = conf_parser.options(section)

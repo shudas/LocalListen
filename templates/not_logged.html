@@ -1,0 +1,80 @@
+<!--FB Login stuff-->
+<script>
+    // This is called with the results from from FB.getLoginStatus().
+    function statusChangeCallback(response) {
+        console.log(response);
+        if (response.status === 'connected') {
+            // hide fb button
+            $('#fblogin_btn').hide();
+            console.log('hello');
+            // Logged into your app and Facebook
+            $.post('/svc/auth/login', response.authResponse, function(success) {
+                console.log('world');
+                console.log(success);
+                if (success === true) {
+                    console.log('success from auth');
+                    // window.location = "{{ url_for('basic_page.show', page='discover') }}";
+                } else {
+                    $('#fblogin_btn').show();
+                }
+            });
+        } else {
+            // make loading word disappear
+            $('#loading').hide();
+            // show fb button
+            $('#fblogin_btn').show();
+        }
+    }
+
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    }
+
+    window.fbAsyncInit = function() {
+        FB.init({
+        appId      : '617235401742568',
+        cookie     : true,  // enable cookies to allow the server to access
+                            // the session
+        xfbml      : true,  // parse social plugins on this page
+        version    : 'v2.2' // use version 2.2
+        });
+
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+
+    };
+
+    // Load the SDK asynchronously
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+            <div class="inner cover">
+                <h1 class="cover-heading">Listen to amazing local artists.<br/>Get your own music heard.</h1>
+                <div class="lead">
+                    <div id="loading">
+                        {% include 'spinner.html' %}
+                    </div>
+                    <fb:login-button id="fblogin_btn" data-size="xlarge" data-scope="public_profile,email" onlogin="checkLoginState();"style="display: none;"/>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

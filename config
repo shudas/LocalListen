@@ -11,3 +11,6 @@ user: root
 password: mysqlpass
 host: localhost
 database: locallisten
+
+[Tables]
+genre: genres
