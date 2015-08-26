@@ -5,54 +5,63 @@
 {% block head %}
     {{ super() }}
     <link href="{{ url_for('static', filename='css/discover.css') }}" rel="stylesheet">
-    <script src="{{ url_for('static', filename='js/lib/listgroup.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/discover.js') }}"></script>
+    <link href="{{ url_for('static', filename='css/spinner.css') }}" rel="stylesheet">
 {% endblock head %}
 
 {% block body %}
 <!--if not logged in, go to index-->
 {% if session is undefined or session.logged_in is undefined or session.logged_in == false %}
     <script>
-        console.log('{{ url_for('basic_page.show') }}');
         window.location = '{{ url_for('basic_page.show') }}';
     </script>
 {% else %}
-<!--navbar-->
-{{ super() }}
+<div class="page-center" id="lone-spinner">
+    {% include 'spinner.html' %}
+</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4">
-            <form>
-                <input type="text" class="form-control" placeholder="Search Genres">
-            </form>
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title" data-unsp-sanitized="clean">Your Genres</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="list-group">
-                        <a href="javascript:genre_clicked()" class="list-group-item active" data-unsp-sanitized="clean">
-                          Cras justo odio
-                        </a>
-                        <a href="javascript:genre_clicked()" class="list-group-item" data-unsp-sanitized="clean">Dapibus ac facilisis in</a>
-                        <a href="javascript:genre_clicked()" class="list-group-item" data-unsp-sanitized="clean">Morbi leo risus</a>
-                        <a href="javascript:genre_clicked()" class="list-group-item" data-unsp-sanitized="clean">Porta ac consectetur ac</a>
-                        <a href="javascript:genre_clicked()" class="list-group-item" data-unsp-sanitized="clean">Vestibulum at eros</a>
+<!--navbar-->
+<div id="main-content" style="display: none;">
+    {{ super() }}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <form>
+                    <input type="text" class="form-control" placeholder="Search Genres">
+                </form>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" data-unsp-sanitized="clean">Your Genres</h3>
                     </div>
-                </div>
-            </div> <!--panel-->
+                    <div class="panel-body">
+                        <div class="list-group">
+                            <a href="javascript:genre_clicked()" class="list-group-item active" data-unsp-sanitized="clean">
+                              Cras justo odio
+                            </a>
+                            <a href="javascript:genre_clicked()" class="list-group-item" data-unsp-sanitized="clean">Dapibus ac facilisis in</a>
+                            <a href="javascript:genre_clicked()" class="list-group-item" data-unsp-sanitized="clean">Morbi leo risus</a>
+                            <a href="javascript:genre_clicked()" class="list-group-item" data-unsp-sanitized="clean">Porta ac consectetur ac</a>
+                            <a href="javascript:genre_clicked()" class="list-group-item" data-unsp-sanitized="clean">Vestibulum at eros</a>
+                        </div>
+                    </div>
+                </div> <!--panel-->
+            </div>
+            <div class="col-sm-8">
+                <h2 class="playing-title">Now Playing</h2>
+                <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+                <p>To see the difference between static and fixed top navbars, just scroll.</p>
+                <p>
+                    <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+                </p>
+            </div>
         </div>
-        <div class="col-sm-8">
-            <h2 class="playing-title">Now Playing</h2>
-            <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-            <p>To see the difference between static and fixed top navbars, just scroll.</p>
-            <p>
-                <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-            </p>
-        </div>
-    </div>
-</div> <!-- /container -->
+    </div> <!-- /container -->
+</div>
+
+<!-- Scripts -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/fbLogin.js') }}"></script>
+<script src="{{ url_for('static', filename='js/lib/listgroup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/discover.js') }}"></script>
 
 {% endif %}
 {% endblock body %}

@@ -8,36 +8,6 @@ from config.config_parser import get_config
 import constants
 
 
-
-
-
-# auth_blueprint = Blueprint('auth', __name__)
-#
-# @auth_blueprint.route('/login', methods=['POST'])
-# def login():
-#     # already logged in and creds still valid
-#     if session.get(constants.STR_LOGGED_IN) and \
-#             valid_fb_token(session.get(constants.STR_ACCESS_TOKEN), session.get(constants.STR_USER_ID)):
-#         app.logger.debug("User already logged in")
-#         return render_template_string('True')
-#     # form was not right
-#     if not all(k in request.form for k in (constants.STR_FB_ACCESS_TOKEN, constants.STR_FB_USER_ID)):
-#         app.logger.debug("POST request did not contain all of the necessary data")
-#         app.logger.debug(request.form)
-#         return render_template_string('False')
-#     # validate creds provided
-#     token = request.form.get(constants.STR_FB_ACCESS_TOKEN)
-#     uid = request.form.get(constants.STR_FB_USER_ID)
-#     if valid_fb_token(token, uid):
-#         session[constants.STR_ACCESS_TOKEN] = token
-#         session[constants.STR_USER_ID] = uid
-#         session[constants.STR_LOGGED_IN] = True
-#         return render_template_string('True')
-#     else:
-#         session[constants.STR_LOGGED_IN] = False
-#         return render_template_string('False')
-
-
 def valid_fb_token(token, uid):
     """Determine if the given user token is valid for the given user id"""
     if token is None or uid is None:
@@ -88,3 +58,9 @@ class LoginResource(Resource):
         else:
             session[constants.STR_LOGGED_IN] = False
             return False
+
+
+class LogoutResource(Resource):
+    def post(self):
+        session[constants.STR_LOGGED_IN] = False
+        return True

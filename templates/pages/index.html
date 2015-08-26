@@ -6,138 +6,65 @@
 {% endblock head %}
 
 {% block body %}
+<div class="page-center" id="lone-spinner">
+    {% include 'spinner.html' %}
+</div>
 
-<!--if not logged in, go to index-->
-{% if (session is defined and session.logged_in is defined and session.logged_in == true
-    and session.access_token is defined and session.fb_user_id is defined) %}
-    <script>
-        console.log("hello");
-        // check that the access token is still valid
-        // Logged into your app and Facebook
-        data = {'accessToken': '{{ session.access_token }}', 'userID': '{{ session.fb_user_id }}'};
-        $.post('/svc/auth/login', data, function(success) {
-            console.log('world');
-            console.log(success);
-            if (success === true) {
-                console.log('success from auth');
-                window.location = "{{ url_for('basic_page.show', page='discover') }}";
-            } else {
-                window.location.reload();
-            }
-        });
-    </script>
-    <!-- spinner -->
-    <div class="page-center">
-        {% include 'spinner.html' %}
-    </div>
-
-{% else %}
-<!--FB Login stuff-->
-<script>
-    // This is called with the results from from FB.getLoginStatus().
-    function toggleLoadAndFb(showFb) {
-        if (showFb) {
-            console.log('show fb');
-            $('#loading').hide();
-            $('#fblogin_btn').show();
-        } else {
-            console.log('hide fb');
-            $('#fblogin_btn').hide();
-            $('#loading').show();
-        }
-    }
-
-    function statusChangeCallback(response) {
-        console.log(response);
-        if (response.status === 'connected') {
-            // hide fb button. show loading
-            toggleLoadAndFb(false);
-            console.log('hello');
-            // Logged into your app and Facebook
-            $.post('/svc/auth/login', response.authResponse, function(success) {
-                console.log('world');
-                console.log(success);
-                if (success === true) {
-                    console.log('success from auth');
-                    window.location = "{{ url_for('basic_page.show', page='discover') }}";
-                } else {
-                    toggleLoadAndFb(true);
-                }
-            });
-        } else {
-            // make loading word disappear
-            toggleLoadAndFb(true);
-        }
-    }
-
-    function checkLoginState() {
-        toggleLoadAndFb(false);
-        FB.getLoginStatus(function(response) {
-            statusChangeCallback(response);
-        });
-    }
-
-    window.fbAsyncInit = function() {
-        FB.init({
-        appId      : '617235401742568',
-        cookie     : true,  // enable cookies to allow the server to access
-                            // the session
-        xfbml      : true,  // parse social plugins on this page
-        version    : 'v2.2' // use version 2.2
-        });
-
-        FB.getLoginStatus(function(response) {
-            statusChangeCallback(response);
-        });
-
-    };
-
-    // Load the SDK asynchronously
-    (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
-
-<div class="container">
+<div class="container" id="main-content" style="display: none;">
     <div class="page-center">
         <h1>Listen to amazing local artists.<br/>Get your own music heard.</h1>
         <div>
             <div id="loading">
                 {% include 'spinner.html' %}
             </div>
-            <fb:login-button id="fblogin_btn" data-size="xlarge" data-scope="public_profile,email"
-                             onlogin="checkLoginState();" style="display: none;"/>
+            <div>
+                <button id="fblogin_btn" class="btn-primary btn-lg" 
+                style="background: url('{{ url_for('static', filename='images/facebook_login.png') }}') no-repeat; -moz-background-size: cover; -webkit-background-size: cover; background-size: cover; background-position: center center; display: none;"
+                onclick="openLoginDialog();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- <div class="site-wrapper">
+<script>
+    // This is called with the results from from FB.getLoginStatus().
+    function toggleLoadAndFb(showFb) {
+        if (showFb) {
+            $('#loading').hide();
+            $('#fblogin_btn').show();
+        } else {
+            $('#fblogin_btn').hide();
+            $('#loading').show();
+        }
+    }
 
-    <div class="site-wrapper-inner">
+    function statusChangeCallback(response) {
+        if (response.status === 'connected') {
+            // hide fb button. show loading
+            toggleLoadAndFb(false);
+            // Logged into your app and Facebook
+            $.post('/svc/auth/login', response.authResponse, function(success) {
+                if (success === true) {
+                    console.log('success from auth');
+                    window.location = "{{ url_for('basic_page.show', page='discover') }}";
+                } else {
+                    $.post('/svc/auth/logout');
+                    loneToMainContent();
+                    toggleLoadAndFb(true);
+                }
+            });
+        } else {
+            $.post('/svc/auth/logout');
+            loneToMainContent();
+            toggleLoadAndFb(true);
+        }
+    }
 
-        <div class="cover-container">
-            <div class="inner cover">
-                <h1 class="cover-heading">Listen to amazing local artists.<br/>Get your own music heard.</h1>
-                <div class="lead">
-                    <div id="loading">
-                        {% include 'spinner.html' %}
-                    </div>
-                    <fb:login-button id="fblogin_btn" data-size="xlarge" data-scope="public_profile,email"
-                                     onlogin="checkLoginState();" style="display: none;"/>
-                </div>
-            </div>
+</script>
 
-        </div>
-
-    </div>
-
-</div> -->
-
-{% endif %}
+<!-- always load fb sdk async -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/fbLogin.js') }}"></script>
 
 {% endblock body %}
