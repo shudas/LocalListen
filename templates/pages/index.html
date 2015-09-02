@@ -6,6 +6,9 @@
 {% endblock head %}
 
 {% block body %}
+{% if session.loggedIn is defined and session.loggedIn == true and session.reauth is defined and session.reauth == false %}
+<script>window.location = "{{ url_for('basic_page.show', page='discover') }}";</script>
+{% else %}
 <div class="page-center" id="lone-spinner">
     {% include 'spinner.html' %}
 </div>
@@ -18,8 +21,8 @@
                 {% include 'spinner.html' %}
             </div>
             <div>
-                <button id="fblogin_btn" class="btn-primary btn-lg" 
-                style="background: url('{{ url_for('static', filename='images/facebook_login.png') }}') no-repeat; -moz-background-size: cover; -webkit-background-size: cover; background-size: cover; background-position: center center; display: none;"
+                <!--hack way to get button background to display properly-->
+                <button id="fblogin_btn" class="btn-primary btn-lg"
                 onclick="openLoginDialog();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
@@ -29,6 +32,13 @@
 </div>
 
 <script>
+    function loneToMainContent() {
+        if ($('#lone-spinner').length && $('#main-content').length) {
+            $('#lone-spinner').hide();
+            $('#main-content').show();
+        }
+    }
+
     // This is called with the results from from FB.getLoginStatus().
     function toggleLoadAndFb(showFb) {
         if (showFb) {
@@ -66,5 +76,7 @@
 
 <!-- always load fb sdk async -->
 <script type="text/javascript" src="{{ url_for('static', filename='js/fbLogin.js') }}"></script>
+
+{% endif %}
 
 {% endblock body %}

@@ -9,18 +9,12 @@
 {% endblock head %}
 
 {% block body %}
-<!--if not logged in, go to index-->
-{% if session is undefined or session.logged_in is undefined or session.logged_in == false %}
-    <script>
-        window.location = '{{ url_for('basic_page.show') }}';
-    </script>
-{% else %}
-<div class="page-center" id="lone-spinner">
-    {% include 'spinner.html' %}
-</div>
 
+<!--logged in-->
+{% if (session.loggedIn is defined and session.loggedIn == true and
+    session.reauth is defined and session.reauth == false) %}
 <!--navbar-->
-<div id="main-content" style="display: none;">
+<div>
     {{ super() }}
 
     <div class="container">
@@ -59,10 +53,34 @@
 </div>
 
 <!-- Scripts -->
-<script type="text/javascript" src="{{ url_for('static', filename='js/fbLogin.js') }}"></script>
 <script src="{{ url_for('static', filename='js/lib/listgroup.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/discover.js') }}"></script>
 
+<!--if not logged in, go to index-->
+{% elif session.loggedIn is undefined or session.loggedIn == false %}
+<script>
+    window.location = '{{ url_for('basic_page.show') }}';
+</script>
+
+
+<!--token expired. could be logged in or maybe not-->
+{% elif session.reauth is defined and session.reauth == true %}
+<div class="page-center" id="lone-spinner">
+    {% include 'spinner.html' %}
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/fbLogin.js') }}"></script>
+
+<!--as a last resort, log out and go to index-->
+{% else %}
+<script>
+$.post('/svc/auth/logout', function() {
+    window.location = '{{ url_for('basic_page.show') }}';
+}
+</script>
+
 {% endif %}
+
+
 {% endblock body %}
 

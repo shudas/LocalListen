@@ -1,26 +1,21 @@
-function loneToMainContent() {
-    if ($('#lone-spinner').length && $('#main-content').length) {
-        $('#lone-spinner').hide();
-        $('#main-content').show();
-    }
-}
-
 function basicStatusChangeCallback(response) {
     if (response.status === 'connected') {
         // Logged into your app and Facebook
         $.post('/svc/auth/login', response.authResponse, function(success) {
             if (success === true) {
-                loneToMainContent();
+                window.location.reload();
             } else {
                 console.log('fail from auth');
-                $.post('/svc/auth/logout');
-                window.location = '/';
+                $.post('/svc/auth/logout', function() {
+                    window.location = '/';
+                });
             }
         });
     } else {
         console.log('not logged in to fb');
-        $.post('/svc/auth/logout');
-        window.location = '/';
+        $.post('/svc/auth/logout', function() {
+            window.location = '/';
+        });
     }
 }
 
